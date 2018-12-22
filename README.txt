@@ -1,9 +1,7 @@
 This program was coded using C++ in XCode 10.1
 It is a class for 1D function. 
 The main functionality of this class are evaluating integrals using numerical methods.
-
-CAUTION: Since this program is initially designed on Mac system, some parts of the code, such as file path, may (or may not) need adjustment.
-
+The methods used are trapezoidal rule, Simpson's rule, Naive Monte Carlo(MC) method, MC methods with (adaptive) importance sampling.
 
 
 
@@ -12,7 +10,6 @@ function.hpp
 function.cpp
 GaussianElim.hpp
 main.cpp
-coefficient.txt (may or may not exist, does not matter)
 
 
 
@@ -23,7 +20,7 @@ Recommendation for reading comments:
 When reading the comments in function.cpp, it would be easier to read the comments of the
 public member functions before reading those of private member functions because private
 functions are used to serve the public functions. So public functions would be a proper
-Start.
+start.
 
 
 
