@@ -164,10 +164,6 @@ std::function<double(double)> Function::Get_Kernel(const int &N) const
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 std::vector<double> Function::Fitting(const std::function<double(double)> &Kernel, const int &power) const
 {
-    std::random_device rd;
-    std::mt19937 mt(rd());
-    std::uniform_real_distribution<double> dist(-0.005, 0.005);
-    
     // Select 25 * range samples from the kernel density estimation
     int Npoints = (int)(25 * range);
     double step = (end - start) / (Npoints - 1);
@@ -458,7 +454,6 @@ double Function::Simpson(const double &epsilon) const
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 double Function::MC(const double &err) const
 {
-    // Get the maximum of the function within the range
     std::random_device rd;
     std::mt19937 mt(rd());
     std::uniform_real_distribution<double> dist_x(start, end);
@@ -568,6 +563,7 @@ double Function::MC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 double Function::MC(const std::function<double(double)> &q, const double &err) const
 {
+    // Get the maximum value of the PDF
     double max = GetMax(q);
     std::random_device rd;
     std::mt19937 mt(rd());
